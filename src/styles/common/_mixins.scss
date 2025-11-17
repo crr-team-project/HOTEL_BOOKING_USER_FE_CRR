@@ -1,7 +1,7 @@
 @mixin respond-md {
-  @media (max-width: 768px) {
-    @content;
-  }
+ @media (max-width: 768px) {
+  @content;
+ }
 }
 
 @mixin shadow-soft {
