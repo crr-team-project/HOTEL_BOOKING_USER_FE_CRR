@@ -1,11 +1,19 @@
+import React from "react";
+import HeroSection from "../../components/home/HeroSection";
+import PopularDestinations from "../../components/home/PopularDestinations";
+import TravelMore from "../../components/home/TravelMore";
+import Newsletter from "../../components/home/Newsletter";
+import "../../styles/pages/home/HomePage.scss";
 
 const HomePage = () => {
-  return (
-    // 임시 클래스
-    <div className="top-container">
-      <h1>Home Page</h1>
-    </div>
-  );
+ return (
+  <div className="home-page">
+   <HeroSection />
+   <PopularDestinations />
+   <TravelMore />
+   <Newsletter />
+  </div>
+ );
 };
 
 export default HomePage;
