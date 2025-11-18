@@ -5,7 +5,12 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   css: {
-    devsource: true
-    
+    devSourcemap: true,
+    preprocessorOptions: {
+      scss: {
+        sourceMap: true,
+        sourceMapContents: true
+      }
+    }
   }
 })

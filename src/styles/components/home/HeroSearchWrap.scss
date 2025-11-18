@@ -1,17 +1,17 @@
-@import "../../common/variables";
-@import "../../common/mixins";
+@use "../../common/variables" as *;
+@use "../../common/mixins" as *;
 
 .search-form {
- position: relative;
- z-index: 5;
- background-color: $color-bg;
- padding: 20px;
- transform: translateY(-10rem);
- box-shadow: $shadow-lg;
- border-radius: $border-radius-lg;
- .form-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
- }
+  position: relative;
+  z-index: 5;
+  background-color: $color-bg;
+  padding: 2rem;
+  transform: translateY(-11rem);
+  box-shadow: $shadow-lg;
+  border-radius: $border-radius-lg;
+  .form-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+  }
 }

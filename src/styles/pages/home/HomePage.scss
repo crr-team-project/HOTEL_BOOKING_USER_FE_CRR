@@ -1,25 +1,23 @@
-@import "../../common/variables";
-@import "../../common/mixins";
+@use "../../common/variables" as *;
+@use "../../common/mixins" as *;
 
 .home-page {
- min-height: 100vh;
 
- // 전체 페이지 레이아웃 스타일
- .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
- }
-
- // 섹션별 간격 조정
- section {
-  margin-bottom: 0;
- }
-
- // 반응형 디자인
- @media (max-width: 768px) {
+  // 전체 페이지 레이아웃 스타일
   .container {
-   padding: 0 15px;
+    max-width: 120rem;
+    margin: 0 auto;
   }
- }
+
+  // 섹션별 간격 조정
+  section {
+    margin-bottom: 0;
+  }
+
+  // 반응형 디자인
+  @media (max-width: 76.8rem) {
+    .container {
+      padding: 0 1.5rem;
+    }
+  }
 }
