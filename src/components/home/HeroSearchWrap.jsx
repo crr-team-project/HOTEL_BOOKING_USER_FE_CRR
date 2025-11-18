@@ -37,21 +37,7 @@ const HeroSearchWrap = () => {
       </div>
      </div>
 
-    <div className="user-menu">
-     <div className="user-info">
-      <div className="avatar">T</div>
-      <div className="user-details">
-       <span className="username">Tomhoon</span>
-       <span className="status">Online</span>
-      </div>
-     </div>
-     <div className="menu-items">
-      <div className="menu-item">위시</div>
-      <div className="menu-item">출연내역</div>
-      <div className="menu-item">설정</div>
-      <div className="menu-item">로그아웃</div>
-     </div>
-    </div>
+
     </div>
   )
 }
