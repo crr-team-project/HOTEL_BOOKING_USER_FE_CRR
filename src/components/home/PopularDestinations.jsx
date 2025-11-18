@@ -32,8 +32,8 @@ const PopularDestinations = () => {
           }}
           className="destinations-swiper"
         >
-          {mockDestinations.map((destination) => (
-            <SwiperSlide key={destination.id}>
+          {mockDestinations.map((destination,i) => (
+            <SwiperSlide key={i}>
               <DestinationCard destination={destination} />
             </SwiperSlide>
           ))}

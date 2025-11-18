@@ -1,5 +1,5 @@
-@import "../../common/variables";
-@import "../../common/mixins";
+@use "../../common/variables";
+@use "../../common/mixins";
 
 .malaka-tour {
  background: linear-gradient(135deg, #a8e6cf, #88d8a3);

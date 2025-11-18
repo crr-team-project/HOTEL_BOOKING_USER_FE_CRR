@@ -1,10 +1,12 @@
+import { useContext } from "react";
 import { Navigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 
 const ProtectedRoute = ({ children }) => {
-  const isAuthenticated = false; // TODO: 인증 로직 구현
+  const { isAuthed } = useContext(AuthContext);
 
-  if (!isAuthenticated) {
-    return <Navigate to="/auth/login" replace />;
+  if (!isAuthed) {
+    return <Navigate to="/login" replace />;
   }
 
   return children;

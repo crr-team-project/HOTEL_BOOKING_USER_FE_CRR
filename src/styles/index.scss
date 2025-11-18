@@ -1,2 +1,5 @@
 // Main styles entry point
 @use "./common/index";
+
+// Layouts
+@import "./layouts/MyPageLayout.scss";
