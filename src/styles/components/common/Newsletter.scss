@@ -2,13 +2,12 @@
 @import "../../common/mixins";
 
 .newsletter-section {
- padding: 80px 0;
- background: linear-gradient(135deg, #a8e6cf, #88d8a3);
+ padding: $gutter 0;
+ background:$gradient-gray-light;
 
  .container {
-  max-width: 1200px;
+  max-width: $max-width-container;
   margin: 0 auto;
-  padding: 0 20px;
  }
 
  .newsletter-content {
@@ -18,7 +17,7 @@
   align-items: center;
 
   .newsletter-text {
-   color: white;
+   color: $color-text;
 
    .newsletter-title {
     font-size: 3rem;

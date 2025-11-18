@@ -44,11 +44,54 @@ $border-radius-full: 999.9rem;
 // Shadow styles
 $shadow-sm: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.05);
 $shadow-md: 0 0.4rem 0.6rem -0.1rem rgba(0, 0, 0, 0.1),
-  0 0.2rem 0.4rem -0.1rem rgba(0, 0, 0, 0.06);
+ 0 0.2rem 0.4rem -0.1rem rgba(0, 0, 0, 0.06);
 $shadow-lg: 0 1rem 1.5rem -0.3rem rgba(0, 0, 0, 0.1),
-  0 0.4rem 0.6rem -0.2rem rgba(0, 0, 0, 0.05);
+ 0 0.4rem 0.6rem -0.2rem rgba(0, 0, 0, 0.05);
 $shadow-xl: 0 2rem 2.5rem -0.5rem rgba(0, 0, 0, 0.1),
-  0 1rem 1rem -0.5rem rgba(0, 0, 0, 0.04);
+ 0 1rem 1rem -0.5rem rgba(0, 0, 0, 0.04);
 $shadow-2xl: 0 2.5rem 5rem -1.2rem rgba(0, 0, 0, 0.25);
+
+// Gradient styles - Gray
+$gradient-gray-light: linear-gradient(135deg, #f9fafb, #f3f4f6);
+$gradient-gray-medium: linear-gradient(135deg, #e5e7eb, #d1d5db);
+$gradient-gray-dark: linear-gradient(135deg, #6b7280, #4b5563);
+$gradient-gray-darker: linear-gradient(135deg, #374151, #1f2937);
+
+// Gradient styles - Vertical
+$gradient-gray-vertical-light: linear-gradient(to bottom, #f9fafb, #f3f4f6);
+$gradient-gray-vertical-medium: linear-gradient(to bottom, #e5e7eb, #d1d5db);
+$gradient-gray-vertical-dark: linear-gradient(to bottom, #6b7280, #4b5563);
+
+// Gradient styles - Horizontal
+$gradient-gray-horizontal-light: linear-gradient(to right, #f9fafb, #f3f4f6);
+$gradient-gray-horizontal-medium: linear-gradient(to right, #e5e7eb, #d1d5db);
+$gradient-gray-horizontal-dark: linear-gradient(to right, #6b7280, #4b5563);
+
+// Gradient styles - Radial
+$gradient-gray-radial-light: radial-gradient(circle, #f9fafb, #f3f4f6);
+$gradient-gray-radial-medium: radial-gradient(circle, #e5e7eb, #d1d5db);
+$gradient-gray-radial-dark: radial-gradient(circle, #6b7280, #4b5563);
+
+// Gradient styles - With transparency
+$gradient-gray-overlay-light: linear-gradient(
+ 135deg,
+ rgba(249, 250, 251, 0.8),
+ rgba(243, 244, 246, 0.8)
+);
+$gradient-gray-overlay-medium: linear-gradient(
+ 135deg,
+ rgba(229, 231, 235, 0.8),
+ rgba(209, 213, 219, 0.8)
+);
+$gradient-gray-overlay-dark: linear-gradient(
+ 135deg,
+ rgba(107, 114, 128, 0.8),
+ rgba(75, 85, 99, 0.8)
+);
+
+// Gradient styles - For cards and surfaces
+$gradient-card-light: linear-gradient(145deg, #ffffff, #f8fafc);
+$gradient-card-elevated: linear-gradient(145deg, #ffffff, #f1f5f9, #e2e8f0);
+$gradient-card-dark: linear-gradient(145deg, #334155, #1e293b);
 
 $header-height: 8rem;
