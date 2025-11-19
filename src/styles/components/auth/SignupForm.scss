@@ -1,6 +1,6 @@
 @import "../../common/variables";
 
-.login-form {
+.signup-form {
  width: 100%;
  max-width: 42rem;
  padding: 0;
@@ -8,6 +8,20 @@
  .form-header {
   margin-bottom: 3rem;
   text-align: left;
+
+  .back-button {
+   background: none;
+   border: none;
+   font-size: 1.4rem;
+   color: $color-text-secondary;
+   cursor: pointer;
+   margin-bottom: 1.6rem;
+   padding: 0;
+
+   &:hover {
+    color: $color-primary;
+   }
+  }
 
   .form-title {
    font-size: 3.2rem;
@@ -34,8 +48,23 @@
    border: 1px solid #fecaca;
   }
 
+  .form-row {
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 1.6rem;
+   margin-bottom: 2.4rem;
+
+   @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+   }
+  }
+
   .form-group {
    margin-bottom: 2.4rem;
+
+   .form-row & {
+    margin-bottom: 0;
+   }
 
    .form-label {
     display: block;
@@ -85,9 +114,6 @@
   }
 
   .form-options {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
    margin-bottom: 3rem;
 
    .checkbox-wrapper {
@@ -106,36 +132,26 @@
      color: $color-text-secondary;
     }
    }
-
-   .forgot-password {
-    font-size: 1.4rem;
-    color: $color-primary;
-    text-decoration: none;
-
-    &:hover {
-     text-decoration: underline;
-    }
-   }
   }
 
-//   .form-button {
-//    width: 100%;
-//    padding: 1.6rem;
-//    background: $gradient-gray-medium;
-//    color: white;
-//    border: none;
-//    border-radius: 0.8rem;
-//    font-size: 1.6rem;
-//    font-weight: 600;
-//    cursor: pointer;
-//    transition: all 0.2s ease;
-//    margin-bottom: 2.4rem;
+  .form-button {
+   width: 100%;
+   padding: 1.6rem;
+   background: $gradient-gray-medium;
+   color: white;
+   border: none;
+   border-radius: 0.8rem;
+   font-size: 1.6rem;
+   font-weight: 600;
+   cursor: pointer;
+   transition: all 0.2s ease;
+   margin-bottom: 2.4rem;
 
-//    &:hover {
-//     background: $gradient-gray-dark;
-//     transform: translateY(-1px);
-//    }
-//   }
+   &:hover {
+    background: $gradient-gray-dark;
+    transform: translateY(-1px);
+   }
+  }
 
   .divider {
    text-align: center;

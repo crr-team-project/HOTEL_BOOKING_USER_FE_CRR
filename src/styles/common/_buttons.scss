@@ -76,6 +76,18 @@
   }
 }
 
+ .btn--social {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+ }
 /* 스타일 변형 */
 .btn--outline {
   background: transparent;

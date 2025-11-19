@@ -3,6 +3,7 @@ import MainLayout from "./components/layouts/MainLayout";
 import AuthLayout from "./components/layouts/AuthLayout";
 import MyPageLayout from "./components/layouts/MyPageLayout";
 import ProtectedRoute from "./components/common/ProtectedRoute";
+import AddPaymentPage from "./pages/payment/AddPaymentPage";
 
 // pages
 import HomePage from "./pages/home/HomePage";
@@ -112,6 +113,7 @@ const AppRouter = () => {
           <Route path="login" element={<LoginPage />} />
           <Route path="signup" element={<SignupPage />} />
           <Route path="reset-password" element={<ResetPasswordPage />} />
+          <Route path="add-payment" element={<AddPaymentPage />} />
 
           {/* 소셜 로그인 콜백 (카카오, 구글) */}
           <Route path="oauth">

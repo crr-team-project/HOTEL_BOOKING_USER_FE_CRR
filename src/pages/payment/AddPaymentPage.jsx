@@ -1,17 +1,17 @@
 import React from "react";
-import SignupForm from "../../components/auth/SignupForm";
+import PaymentForm from "../../components/payment/PaymentForm";
 import AuthLayout from "../../components/layouts/AuthLayout";
-import "../../styles/pages/auth/SignupPage.scss";
+import "../../styles/pages/payment/AddPaymentPage.scss";
 import AuthImageWrap from "../../components/auth/AuthImageWrap";
 
-const SignupPage = () => {
+const AddPaymentPage = () => {
  return (
   <AuthLayout>
-   <div className="signup-page">
+   <div className="add-payment-page">
     <div className="auth-layout-container">
      <div className="auth-layout-content">
       <div className="auth-layout-form-section">
-       <SignupForm />
+       <PaymentForm />
       </div>
       <div className="auth-layout-image-section">
        <AuthImageWrap />
@@ -23,4 +23,4 @@ const SignupPage = () => {
  );
 };
 
-export default SignupPage;
+export default AddPaymentPage;
