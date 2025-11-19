@@ -45,6 +45,7 @@
   background: $color-primary;
   color: #fff;
   border-color: $color-primary;
+      border-radius: $border-radius-sm;
 
   &:hover {
     background: color.scale($color-primary, $lightness: -6%); /* ✅ 변경 */
@@ -53,6 +54,8 @@
 }
 
 .btn--secondary {
+      border-radius: $border-radius-sm;
+
   background: $color-bg;
   color: $color-secondary;
   border-color: $color-border;
@@ -62,6 +65,8 @@
 }
 
 .btn--accent {
+      border-radius: $border-radius-sm;
+
   background: $color-accent;
   color: #fff;
   border-color: $color-accent;

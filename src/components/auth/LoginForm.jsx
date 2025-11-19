@@ -104,13 +104,20 @@ const LoginForm = () => {
           </a>
         </div>
 
-        <button type="submit" className="login-button">
+        <button type="submit" className="btn btn--primary">
           Login
         </button>
 
         <div className="divider">
-          <span className="divider-text">회원가입</span>
+          <span className="divider-text">회원가입하세요</span>
         </div>
+        <button
+          type="button"
+          onClick={() => navigate("/signup")}
+          className="btn btn--accent"
+        >
+          Sign Up
+        </button>
 
         <div className="social-login">
           <p className="social-login-text">Or login with</p>
