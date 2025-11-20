@@ -1,14 +1,15 @@
 import React from "react";
 import SignupForm from "../../components/auth/SignupForm";
 import AuthLayout from "../../components/layouts/AuthLayout";
-import "../../styles/pages/auth/SignupPage.scss";
+// import "../../styles/pages/auth/SignupPage.scss";
 import AuthImageWrap from "../../components/auth/AuthImageWrap";
+import "../../styles/layouts/AuthPageLayout.scss";
 
 const SignupPage = () => {
  return (
-  <AuthLayout>
-   <div className="signup-page">
-    <div className="auth-layout-container">
+    <div className="auth-layout-page">
+
+   <div className="auth-layout-container">
      <div className="auth-layout-content">
       <div className="auth-layout-form-section">
        <SignupForm />
@@ -17,9 +18,8 @@ const SignupPage = () => {
        <AuthImageWrap />
       </div>
      </div>
+     </div>
     </div>
-   </div>
-  </AuthLayout>
  );
 };
 
