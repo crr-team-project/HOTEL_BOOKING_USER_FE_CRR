@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { authenticateUser } from "../../api/mockUser";
-import "../../styles/components/auth/LoginForm.scss";
+// import "../../styles/components/auth/LoginForm.scss";
 
 const LoginForm = () => {
  const [formData, setFormData] = useState({
@@ -49,7 +49,7 @@ const LoginForm = () => {
  };
 
  return (
-  <div className="login-form">
+  <div className="common-form">
    <div className="form-header">
     <h1 className="form-title">Login</h1>
     <p className="form-subtitle">로그인하세요</p>

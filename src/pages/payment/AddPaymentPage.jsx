@@ -1,11 +1,10 @@
 import React from "react";
 import PaymentForm from "../../components/payment/PaymentForm";
-import "../../styles/pages/payment/AddPaymentPage.scss";
 import AuthImageWrap from "../../components/auth/AuthImageWrap";
 
 const AddPaymentPage = () => {
   return (
-    <div className="add-payment-page">
+    <div className="auth-layout-page">
       <div className="auth-layout-container">
         <div className="auth-layout-content">
           <div className="auth-layout-form-section">

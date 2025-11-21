@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../styles/components/payment/PaymentForm.scss";
 
 const PaymentForm = () => {
  const [formData, setFormData] = useState({
@@ -88,7 +87,7 @@ const PaymentForm = () => {
  };
 
  return (
-  <div className="payment-form">
+  <div className="common-form">
    <div className="payment-header">
     <button type="button" className="back-button" onClick={handleBack}>
      ← Back
@@ -97,7 +96,7 @@ const PaymentForm = () => {
     <p className="payment-subtitle">결제수단을 추가하세요</p>
    </div>
 
-   <form className="payment-form-content" onSubmit={handleSubmit}>
+   <form className="form-content" onSubmit={handleSubmit}>
     {error && <div className="error-message">{error}</div>}
 
     <div className="form-group">
@@ -183,7 +182,7 @@ const PaymentForm = () => {
      </label>
     </div>
 
-    <button type="submit" className="btn btn--primary payment-button">
+    <button type="submit" className="btn btn--primary btn--block payment-button">
      결제수단 추가
     </button>
 

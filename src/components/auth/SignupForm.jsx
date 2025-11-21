@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../styles/components/auth/SignupForm.scss";
 
 const SignupForm = () => {
  const [formData, setFormData] = useState({
@@ -66,8 +65,8 @@ const SignupForm = () => {
  };
 
  return (
-  <div className="signup-form">
-   <div className="signup-header">
+  <div className="common-form signup-form">
+   <div className="form-header">
     <button
      type="button"
      className="back-button"
@@ -182,17 +181,25 @@ const SignupForm = () => {
 
     <button
      type="submit"
-     onClick={() => navigate("/add-payment")}
+     onClick={() => navigate("/login")}
      className="btn btn--primary btn--block"
     >
-     다음
+    회원 가입
+    </button>
+
+    <button
+     type="submit"
+     onClick={() => navigate("/add-payment")}
+     className="btn  btn--block btn--outline"
+    >
+     결제 수단 등록하기
     </button>
 
     <div className="divider">
      <span className="divider-text">회원가입</span>
     </div>
 
-    <div className="social-signup">
+    <div className="social-login">
      <p className="social-signup-text">Or Sign up with</p>
      <div className="social-buttons">
       <button

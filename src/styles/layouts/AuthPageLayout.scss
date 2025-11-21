@@ -1,4 +1,4 @@
-@use "../common/variables" as *;
+@import "../common/variables";
 
 // 공통 Auth/Form 레이아웃 스타일
 .auth-layout-page {
@@ -30,7 +30,7 @@
     flex: 1;
     align-items: center;
     justify-content: center;
-    padding: $spacing-xxxl $spacing-lg;
+    // padding: $spacing-xxxl $spacing-lg;
     background: $color-bg;
   }
 
@@ -125,35 +125,6 @@
         margin-bottom: 0;
       }
 
-      .form-label {
-        display: block;
-        font-size: $font-size-sm;
-        font-weight: 500;
-        color: $color-text;
-        margin-bottom: $spacing-xs;
-      }
-
-      .form-input {
-        width: 100%;
-        padding: $spacing-sm $spacing-md;
-        border: $border;
-        border-radius: $border-radius-md;
-        font-size: $font-size-base;
-        background: $color-bg;
-        transition: all 0.2s ease;
-        box-sizing: border-box;
-
-        &:focus {
-          outline: none;
-          border-color: $color-primary;
-          box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-
-        &::placeholder {
-          color: $color-text-muted;
-        }
-      }
-
       .form-select {
         appearance: none;
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
@@ -220,26 +191,10 @@
         align-items: center;
       }
     }
-
-    .form-button {
-      width: 100%;
-      padding: $spacing-md;
-      background: $gradient-gray-medium;
-      color: white;
-      border: none;
-      border-radius: $border-radius-md;
-      font-size: $font-size-base;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      margin-bottom: $spacing-xl;
-
-      &:hover {
-        background: $gradient-gray-dark;
-        transform: translateY(-1px);
-        box-shadow: $shadow-sm;
-      }
+    .btn + .btn {
+      margin-top: $gutter-sm;
     }
+
 
     .divider {
       text-align: center;
@@ -315,6 +270,7 @@
     }
 
     .security-info {
+      margin-top: $spacing-lg;
       .security-text {
         font-size: 1.2rem;
         color: $color-text-muted;
