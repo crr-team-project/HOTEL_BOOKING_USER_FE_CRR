@@ -48,6 +48,27 @@ const LoginForm = () => {
   console.log(`${provider} login`);
  };
 
+ const handleTempLogin = () => {
+  // 임시 로그인 - 별도 인증 없이 바로 로그인
+  const tempUser = {
+   id: 999,
+   email: "temp@user.com",
+   name: "임시사용자",
+   phone: "010-0000-0000",
+   profileImage: null,
+   createdAt: new Date().toISOString().split("T")[0],
+  };
+
+  const tempToken = "temp-token-" + Date.now();
+
+  // 로그인 처리
+  login(tempUser);
+  localStorage.setItem("accessToken", tempToken);
+
+  // 마이페이지로 이동
+  navigate("/mypage");
+ };
+
  return (
   <div className="common-form">
    <div className="form-header">
