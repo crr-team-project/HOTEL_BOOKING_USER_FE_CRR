@@ -2,5 +2,5 @@
 @use "./common/index";
 
 // Layouts
-@import "./layouts/MyPageLayout.scss";
-@import "./layouts/AuthPageLayout.scss";
+@use "./layouts/MyPageLayout.scss";
+@use "./layouts/AuthPageLayout.scss";

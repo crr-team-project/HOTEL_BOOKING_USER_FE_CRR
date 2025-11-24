@@ -1,4 +1,4 @@
-@import "./variables";
+@use "./variables" as *;
 
 // 공통 Auth/Form 레이아웃 스타일
 .auth-layout-page {
@@ -132,7 +132,6 @@
     color: $color-text;
     margin-bottom: $spacing-xs;
    }
-
 
    .form-select {
     appearance: none;

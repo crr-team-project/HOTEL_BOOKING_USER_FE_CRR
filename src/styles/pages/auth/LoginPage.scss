@@ -1,4 +1,4 @@
-@import "../../common/variables";
+@use "../../common/variables" as *;
 
 .login-page {
  min-height: 100vh;

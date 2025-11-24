@@ -1,5 +1,6 @@
-@import "../../common/variables";
-@import "../../common/mixins";
+@use "../../common/variables" as *;
+@use "../../common/mixins" as *;
+@use "sass:color";
 
 .newsletter-section {
  padding: 80px 0;
@@ -79,7 +80,7 @@
      white-space: nowrap;
 
      &:hover {
-      background: darken($color-secondary, 10%);
+      background: color.adjust($color-secondary, $lightness: -10%);
       transform: translateY(-1px);
      }
 

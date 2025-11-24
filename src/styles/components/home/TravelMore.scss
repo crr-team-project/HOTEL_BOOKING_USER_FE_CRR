@@ -1,10 +1,9 @@
-@import "../../common/variables";
-@import "../../common/mixins";
+@use "../../common/variables" as *;
+@use "../../common/mixins" as *;
 
 .travel-more {
  padding: 10rem 0;
  background-color: white;
-
 
  .section-header {
   display: flex;
