@@ -25,6 +25,8 @@ import KakaoCallbackPage from "./pages/auth/KakaoCallbackPage";
 import GoogleCallbackPage from "./pages/auth/GoogleCallbackPage";
 
 import MyOverviewPage from "./pages/mypage/MyOverviewPage";
+import MyAccountPage from "./pages/mypage/MyAccountPage";
+import MyPaymentPage from "./pages/mypage/MyPaymentPage";
 import ProfilePage from "./pages/mypage/ProfilePage";
 import MyBookingsPage from "./pages/mypage/MyBookingsPage";
 import MyBookingDetailPage from "./pages/mypage/MyBookingDetailPage";
@@ -95,12 +97,16 @@ const AppRouter = () => {
             </ProtectedRoute>
           }
         >
-          <Route index element={<MyOverviewPage />} />
-          <Route path="profile" element={<ProfilePage />} />
+          <Route index element={<MyAccountPage />} />
+          <Route path="account" element={<MyAccountPage />} />
           <Route path="bookings">
             <Route index element={<MyBookingsPage />} />
             <Route path=":bookingId" element={<MyBookingDetailPage />} />
           </Route>
+          <Route path="payment" element={<MyPaymentPage />} />
+
+          {/* 기존 라우트들 (필요시 제거 가능) */}
+          <Route path="profile" element={<ProfilePage />} />
           <Route path="reviews" element={<MyReviewsPage />} />
           <Route path="wishlist" element={<WishlistPage />} />
           <Route path="coupons" element={<MyCouponsPage />} />
