@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MyProfile from "../../components/mypage/MyProfile";
 import "../../styles/pages/mypage/MyPaymentPage.scss";
-
+import PaymentForm from "../../components/payment/PaymentForm";
 const MyPaymentPage = () => {
  const navigate = useNavigate();
 
+ const [addCard, setAddCard] = useState(false);
  // 임시 카드 데이터
  const [cards, setCards] = useState([
   {
@@ -17,11 +18,18 @@ const MyPaymentPage = () => {
  ]);
 
  const handleAddCard = () => {
-  navigate("/add-payment");
+//   navigate("/add-payment");
+    setAddCard(true);
  };
 
  const handleDeleteCard = (cardId) => {
   setCards(cards.filter((card) => card.id !== cardId));
+ };
+
+const handleBackdropClick = (e) => {
+  if (e.target.className === "add-card-modal") {
+   setAddCard(false);
+  }
  };
 
  return (
@@ -67,6 +75,12 @@ const MyPaymentPage = () => {
       </div>
       <div className="add-card-text">Add a new card</div>
      </div>
+     {addCard && (
+        <div className="add-card-modal" onClick={handleBackdropClick}>
+
+        <PaymentForm />
+        </div>
+        )}
     </div>
    </div>
 
