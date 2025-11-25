@@ -2,15 +2,14 @@ import React from "react";
 import HeroSection from "../../components/home/HeroSection";
 import PopularDestinations from "../../components/home/PopularDestinations";
 import TravelMore from "../../components/home/TravelMore";
-import Newsletter from "../../components/common/Newsletter";
-import HeroSearchWrap from "../../components/home/HeroSearchWrap";
 import "../../styles/pages/home/HomePage.scss";
+import SearchFilterWrap from "../../components/search/SearchFilterWrap";
 
 const HomePage = () => {
  return (
   <div className="home-page top-container">
    <HeroSection />
-   <HeroSearchWrap />
+   <SearchFilterWrap />
    <PopularDestinations />
    <TravelMore />
   </div>

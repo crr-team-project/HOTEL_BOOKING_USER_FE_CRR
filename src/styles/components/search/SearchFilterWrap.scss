@@ -12,6 +12,9 @@
   .form-container {
     display: flex;
     justify-content: space-between;
-    padding: 2rem;
+    gap: $spacing-md;
+    .form-group{
+      flex: 1;
+    }
   }
 }
