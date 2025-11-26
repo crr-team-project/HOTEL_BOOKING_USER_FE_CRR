@@ -24,10 +24,11 @@ export const registerUser = async (userData) => {
  */
 export const loginUser = async (credentials) => {
   const response = await axiosInstance.post("/auth/login", credentials);
-  if (response.data.token) {
-    localStorage.setItem("accessToken", response.data.token);
+  // 백엔드 응답 구조: { data: { _id, name, email, token }, message, resultCode }
+  if (response.data.data && response.data.data.token) {
+    localStorage.setItem("accessToken", response.data.data.token);
   }
-  return response.data;
+  return response.data.data; // 실제 사용자 데이터 반환
 };
 
 /**
