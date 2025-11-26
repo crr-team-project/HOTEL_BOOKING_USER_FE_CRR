@@ -1,11 +1,21 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../../styles/components/search/HotelListCards.scss";
 
 const HotelListCards = ({ hotels }) => {
+ const navigate = useNavigate();
+
  return (
   <div className="hotel-list-cards">
    {hotels.map((hotel) => (
-    <div key={hotel.id} className="hotel-card">
+    <div
+     key={hotel.id}
+     className="hotel-card"
+     onClick={() => {
+        navigate(`/hotels/${hotel.id}`);
+        console.log(`Navigating to hotel ID: ${hotel.id}`);
+     }}
+    >
      <div className="hotel-image">
       <img src={hotel.image} alt={hotel.name} />
       <div className="image-count">{hotel.imageCount} images</div>

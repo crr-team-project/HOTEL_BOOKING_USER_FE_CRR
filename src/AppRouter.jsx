@@ -51,16 +51,19 @@ const AppRouter = () => {
     {/* main landing */}
     <Route path="/" element={<MainLayout />}>
      <Route index element={<HomePage />} />
-    </Route>
-
-    {/* 검색 레이아웃 */}
-    <Route element={<SearchLayout />}>
-     <Route path="search" element={<SearchPage />} />
+         {/* 호텔 리스트 */}
      <Route path="hotels">
       <Route index element={<HotelListPage />} />
       <Route path=":hotelId" element={<HotelDetailPage />} />
      </Route>
     </Route>
+
+    {/* 검색 레이아웃 */}
+    <Route element={<SearchLayout />}>
+     <Route path="search" element={<SearchPage />} />
+    </Route>
+
+
     {/* 예약 플로우 - 로그인 필요 */}
     <Route
      path="booking/:hotelId"
