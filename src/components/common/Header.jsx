@@ -59,7 +59,7 @@ const Header = () => {
         {user?.profileImage ? (
          <img src={user.profileImage} alt="Profile" className="user-avatar" />
         ) : (
-         <div className="user-avatar-placeholder">
+         <div className="user-avatar-placeholder" onClick={()=>navigate("/mypage/account")}>
           {user?.name?.charAt(0) || "U"}
          </div>
         )}
