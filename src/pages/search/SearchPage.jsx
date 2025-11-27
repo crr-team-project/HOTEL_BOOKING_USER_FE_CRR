@@ -1,47 +1,47 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import HotelTypesTabs from "../../components/search/HotelTypesTabs";
 import HotelResultsHeader from "../../components/search/HotelResultsHeader";
 import HotelListCards from "../../components/search/HotelListCards";
 import "../../styles/pages/search/SearchPage.scss";
+import { getHotels } from "../../api/hotelClient";
 
 const SearchPage = () => {
- // 임시 호텔 데이터
- const hotels = [
-  {
-   id: 1,
-   name: "해튼호텔",
-   image: "/hotel-placeholder.jpg",
-   imageCount: 9,
-   location: "Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437",
-   stars: 5,
-   amenities: 20,
-   rating: 4.2,
-   ratingLabel: "Very Good",
-   reviews: 371,
-   price: 240000,
-  },
-  {
-   id: 2,
-   name: "마제스틱 말라카 호텔",
-   image: "/hotel-placeholder.jpg",
-   imageCount: 9,
-   location: "Kucukayasofya No. 40 Sultanahmet, Istanbul 34022",
-   stars: 5,
-   amenities: 20,
-   rating: 4.2,
-   ratingLabel: "Very Good",
-   reviews: 371,
-   price: 120000,
-  },
- ];
+  const [hotels, setHotels] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
- return (
-  <div className="search-page">
-   <HotelTypesTabs />
-   <HotelResultsHeader total={257} showing={4} />
-   <HotelListCards hotels={hotels} />
-  </div>
- );
+  useEffect(() => {
+    const fetchHotels = async () => {
+      try {
+        setLoading(true);
+        const data = await getHotels();
+        setHotels(data);
+      } catch (err) {
+        setError(err.message);
+        console.error("Failed to fetch hotels:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchHotels();
+  }, []);
+
+  if (loading) {
+    return <div className="search-page loading">Loading hotels...</div>;
+  }
+
+  if (error) {
+    return <div className="search-page error">Error: {error}</div>;
+  }
+
+  return (
+    <div className="search-page">
+      <HotelTypesTabs />
+      <HotelResultsHeader total={hotels.length} showing={hotels.length} />
+      <HotelListCards hotels={hotels} />
+    </div>
+  );
 };
 
 export default SearchPage;
