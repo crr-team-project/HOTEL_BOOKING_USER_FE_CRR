@@ -65,7 +65,12 @@ const HotelDetailPage = () => {
     <div className="hotel-detail-container inner">
       <HotelDetailHeader hotel={hotel} />
       <HotelGallery images={hotel.images} hotelName={hotel.name} />
-      <HotelOverview description={hotel.description} />
+      <HotelOverview
+        description={hotel.description}
+        rating={hotel.ratingAverage}
+        reviewCount={hotel.ratingCount}
+        tags={hotel.tags}
+      />
       <Amenities amenities={hotel.amenities} />
       <AvailableRooms rooms={rooms} />
       <HotelMap address={hotel.address} location={hotel.location} />
