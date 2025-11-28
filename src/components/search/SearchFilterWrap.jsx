@@ -2,78 +2,101 @@ import "../../styles/components/search/SearchFilterWrap.scss";
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-// 한글 로케일 설정을 위한 라이브러리 (선택적)
 import { ko } from "date-fns/locale";
+import { useNavigate } from "react-router-dom";
 const SearchFilterWrap = () => {
+ const navigate = useNavigate();
+ const [destination, setDestination] = useState("");
  const [dateRange, setDateRange] = useState([null, null]);
  const [startDate, endDate] = dateRange;
- // 예약 불가능한 날짜를 판별하는 함수 (예시: 일요일은 예약 불가)
- const isDateDisabled = ({ date, view }) => {
-  // 'month' 뷰에서만 체크
-  if (view === "month") {
-   // 일요일(0)이면 비활성화
-   return date.getDay() === 0;
-  }
+ const [guests, setGuests] = useState(2);
+ const [showGuestPicker, setShowGuestPicker] = useState(false);
+
+ const incrementGuests = () => setGuests((prev) => Math.min(prev + 1, 10));
+ const decrementGuests = () => setGuests((prev) => Math.max(prev - 1, 1));
+
+ const handleSearch = () => {
+  const params = new URLSearchParams();
+  if (destination) params.append("destination", destination);
+  if (startDate) params.append("checkIn", startDate.toISOString());
+  if (endDate) params.append("checkOut", endDate.toISOString());
+  params.append("guests", guests);
+
+  navigate(`/search?${params.toString()}`);
  };
  return (
   <div className="search-form inner">
-   <h3>Where are you staying?</h3>
-
-   <div className="calendar-section">
-    <DatePicker
-     selectsRange={true}
-     startDate={startDate}
-     endDate={endDate}
-     onChange={(update) => {
-      setDateRange(update);
-     }}
-     inline
-     monthsShown={1}
-     minDate={new Date()}
-     dateFormat="yyyy. MM. dd"
-     locale={ko}
-    />
-
-    <div className="selected-dates">
-     {startDate && endDate ? (
-      <p>
-       선택 기간: {startDate.toLocaleDateString("ko-KR")} ~{" "}
-       {endDate.toLocaleDateString("ko-KR")}
-      </p>
-     ) : (
-      <p>날짜를 선택해 주세요.</p>
-     )}
-    </div>
-   </div>
-
    <div className="form-container">
     <div className="form-group">
-     <label>Enter Destination</label>
+     <label>목적지</label>
      <input
       type="text"
-      placeholder="예) 서울시 어머님댁 저희집"
+      placeholder="호텔명 또는 지역 입력"
       className="destination-input"
+      value={destination}
+      onChange={(e) => setDestination(e.target.value)}
      />
     </div>
 
     <div className="form-group">
-     <label>Check In</label>
-     <input type="date" defaultValue="2024-01-22" className="date-input" />
+     <label>날짜</label>
+     <DatePicker
+      selectsRange={true}
+      startDate={startDate}
+      endDate={endDate}
+      onChange={(update) => {
+       setDateRange(update);
+      }}
+      minDate={new Date()}
+      dateFormat="M/d"
+      locale={ko}
+      placeholderText="11/28 ~ 도 11/29 · 1박"
+      className="date-input"
+      monthsShown={1}
+      showPopperArrow={false}
+     />
     </div>
 
-    <div className="form-group">
-     <label>Check Out</label>
-     <input type="date" defaultValue="2024-01-24" className="date-input" />
+    <div className="form-group guest-picker-wrapper">
+     <label>인원 수</label>
+     <div
+      className="guest-display"
+      onClick={() => setShowGuestPicker(!showGuestPicker)}
+     >
+      <span className="guest-icon">👤</span>
+      <span>{guests}</span>
+     </div>
+
+     {showGuestPicker && (
+      <div className="guest-picker-dropdown">
+       <button
+        className="guest-btn"
+        onClick={(e) => {
+         e.stopPropagation();
+         decrementGuests();
+        }}
+        disabled={guests <= 1}
+       >
+        -
+       </button>
+       <span className="guest-count">{guests}</span>
+       <button
+        className="guest-btn"
+        onClick={(e) => {
+         e.stopPropagation();
+         incrementGuests();
+        }}
+        disabled={guests >= 10}
+       >
+        +
+       </button>
+      </div>
+     )}
     </div>
 
-    <div className="form-group">
-     <label>Rooms & Guests</label>
-     <select className="guests-select">
-      <option>1 room, 2 guests</option>
-      <option>1 room, 1 guest</option>
-      <option>2 rooms, 4 guests</option>
-     </select>
-    </div>
+    <button className="search-button" onClick={handleSearch}>
+     <span>🔍</span>
+    </button>
    </div>
   </div>
  );

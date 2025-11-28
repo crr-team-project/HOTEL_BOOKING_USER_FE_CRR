@@ -51,7 +51,7 @@ const AppRouter = () => {
     {/* main landing */}
     <Route path="/" element={<MainLayout />}>
      <Route index element={<HomePage />} />
-         {/* 호텔 리스트 */}
+     {/* 호텔 리스트 */}
      <Route path="hotels">
       <Route index element={<HotelListPage />} />
       <Route path=":hotelId" element={<HotelDetailPage />} />
@@ -63,16 +63,16 @@ const AppRouter = () => {
      <Route path="search" element={<SearchPage />} />
     </Route>
 
-
     {/* 예약 플로우 - 로그인 필요 */}
-    <Route
-     path="booking/:hotelId"
-     element={
-      <ProtectedRoute>
-       <BookingStepLayout />
-      </ProtectedRoute>
-     }
-    >
+    <Route path="/" element={<MainLayout />}>
+     <Route
+      path="booking/:hotelId"
+      element={
+       <ProtectedRoute>
+        <BookingStepLayout />
+       </ProtectedRoute>
+      }
+     ></Route>
      {/* /booking/:hotelId */}
      <Route index element={<BookingStepDates />} />
      {/* /booking/:hotelId/room */}

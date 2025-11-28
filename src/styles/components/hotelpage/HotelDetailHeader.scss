@@ -2,6 +2,7 @@
 @use "../../common/mixins" as *;
 
 .hotel-detail-header {
+  margin-top: $header-height;
 
   .header-top {
     display: flex;
