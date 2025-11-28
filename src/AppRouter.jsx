@@ -72,17 +72,18 @@ const AppRouter = () => {
         <BookingStepLayout />
        </ProtectedRoute>
       }
-     ></Route>
-     {/* /booking/:hotelId */}
-     <Route index element={<BookingStepDates />} />
-     {/* /booking/:hotelId/room */}
-     <Route path="room" element={<BookingStepRoom />} />
-     {/* /booking/:hotelId/extras */}
-     <Route path="extras" element={<BookingStepExtras />} />
-     {/* /booking/:hotelId/payment */}
-     <Route path="payment" element={<BookingStepPayment />} />
-     {/* /booking/:hotelId/complete */}
-     <Route path="complete" element={<BookingComplete />} />
+     >
+      {/* /booking/:hotelId */}
+      <Route index element={<BookingStepDates />} />
+      {/* /booking/:hotelId/room */}
+      <Route path="room" element={<BookingStepRoom />} />
+      {/* /booking/:hotelId/extras */}
+      <Route path="extras" element={<BookingStepExtras />} />
+      {/* /booking/:hotelId/payment */}
+      <Route path="payment" element={<BookingStepPayment />} />
+      {/* /booking/:hotelId/complete */}
+      <Route path="complete" element={<BookingComplete />} />
+     </Route>
     </Route>
 
     {/* 고객센터 / 공지 / FAQ / 문의 */}
