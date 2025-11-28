@@ -2,19 +2,54 @@
 @use "../../common/mixins" as *;
 
 .search-form {
-  position: relative;
-  z-index: 5;
-  background-color: $color-bg;
-  padding: 2rem;
-  transform: translateY(-11rem);
-  box-shadow: $shadow-lg;
-  border-radius: $border-radius-lg;
-  .form-container {
-    display: flex;
-    justify-content: space-between;
-    gap: $spacing-md;
-    .form-group{
-      flex: 1;
-    }
+ position: relative;
+ z-index: 5;
+ background-color: $color-bg;
+ padding: 2rem;
+ transform: translateY(-11rem);
+ box-shadow: $shadow-lg;
+ border-radius: $border-radius-lg;
+ .form-container {
+  display: flex;
+  justify-content: space-between;
+  gap: $spacing-md;
+  .form-group {
+   flex: 1;
   }
+ }
+ .calendar-section {
+  margin: 2rem 0;
+ }
+
+ .react-datepicker {
+  width: 100% !important;
+  font-size: 1.2rem !important;
+
+  .react-datepicker__month-container {
+   width: 100%;
+  }
+
+
+
+
+  .react-datepicker__navigation {
+   top: 1.5rem;
+  }
+ }
+
+ .selected-dates {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: $color-bg;
+  border-radius: $border-radius-md;
+  text-align: center;
+  font-size: 2.1rem;
+ }
+ react-datepicker__day-names{
+  display: flex;
+  justify-content: space-between;
+  .columnheader{
+    flex:1
+  }
+ }
 }

@@ -3,6 +3,7 @@
 .available-rooms {
  display: flex;
  flex-direction: column;
+     padding: $spacing-section 0 0;
  gap: $gutter-lg;
  // 예약 가능한 객실 스타일
  .room-card {
