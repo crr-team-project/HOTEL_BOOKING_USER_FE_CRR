@@ -9,7 +9,7 @@ const HomePage = () => {
  return (
   <div className="home-page top-container">
    <HeroSection />
-   <SearchFilterWrap />
+   {/* <SearchFilterWrap /> */}
    <PopularDestinations />
    <TravelMore />
   </div>

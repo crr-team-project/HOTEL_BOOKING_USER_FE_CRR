@@ -45,8 +45,13 @@ select {
     cursor: not-allowed;
   }
   }
+  .label,
 label {
   font-size: 1.4rem;
+}
+.value {
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 /* 높이 조정 */
 .input--sm {
