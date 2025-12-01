@@ -11,7 +11,7 @@
   min-height: 70rem;
 
   .hero-card-container {
-    max-width: 120rem;
+    max-width: $max-width-container;
     margin: 0 auto;
     width: 100%;
     display: flex;

@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import HeroCard from "./HeroCard";
-
+import { useNavigate } from "react-router-dom";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -11,6 +11,7 @@ import "../../styles/components/home/HeroSection.scss";
 import { Pagination } from "swiper/modules";
 
 const HeroSection = () => {
+    const navigate = useNavigate();
  const heroSlides = [
   {
    title: "신정해보세요",
@@ -39,6 +40,9 @@ const HeroSection = () => {
 
  return (
   <div className="hero-section">
+    <div className="search-btn-wrapper">
+        <button className="btn btn--blur" onClick={() => navigate("/search")}>어떤 숙소를 찾고 계세요?</button>
+    </div>
    <Swiper
     pagination={true}
     modules={[Pagination]}

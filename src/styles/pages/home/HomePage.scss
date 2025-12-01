@@ -5,14 +5,11 @@
 
   // 전체 페이지 레이아웃 스타일
   .container {
-    max-width: 120rem;
+    max-width: $max-width-container;
     margin: 0 auto;
+    padding:$spacing-section 0;
   }
 
-  // 섹션별 간격 조정
-  section {
-    margin-bottom: 0;
-  }
 
   // 반응형 디자인
   @media (max-width: 76.8rem) {
