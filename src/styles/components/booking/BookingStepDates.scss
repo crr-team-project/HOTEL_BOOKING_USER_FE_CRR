@@ -5,8 +5,6 @@
   max-width: $max-width-container;
   margin: 0 auto;
   padding: $spacing-sm;
-  ;
-
   .booking-header {
     margin-bottom: $spacing-xxl;
 
@@ -47,8 +45,7 @@
       padding: $spacing-lg;
       border-radius: $border-radius-lg;
       box-shadow: $shadow-md;
-    flex:3;
-
+      flex: 3;
 
       h2 {
         font-size: $font-size-lg;
@@ -58,18 +55,18 @@
       .calendar-wrapper {
         margin-bottom: $spacing-lg;
 
-        .rdp-months{
+        .rdp-months {
           width: 100%;
           max-width: none;
-          .rdp-nav{
+          .rdp-nav {
             top: -4rem;
           }
-          .rdp-month{
+          .rdp-month {
             flex: 1;
             background-color: $color-bg-light;
-            padding:$spacing-md;
-            border-radius: $border-radius-md  ;
-            .rdp-month_grid{
+            padding: $spacing-md;
+            border-radius: $border-radius-md;
+            .rdp-month_grid {
               width: 100%;
             }
           }
@@ -123,7 +120,6 @@
 
               &:hover:not(:disabled) {
                 border-color: $color-primary;
-                background: lighten($color-primary, 45%);
               }
 
               &:disabled {
@@ -155,8 +151,7 @@
       border-radius: $border-radius-lg;
       box-shadow: $shadow-lg;
       height: fit-content;
-    flex:1;
-
+      flex: 1;
 
       .summary-hotel {
         display: flex;
@@ -226,7 +221,6 @@
         transition: background 0.2s;
 
         &:hover {
-          background: darken($color-primary, 10%);
         }
 
         &:disabled {
