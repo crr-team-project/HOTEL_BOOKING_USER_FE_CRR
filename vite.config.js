@@ -10,6 +10,12 @@ export default defineConfig({
   watch: {
    usePolling: true, // Docker에서 파일 변경 감지
   },
+  proxy: {
+   "/api": {
+    target: "http://backend:3000",
+    changeOrigin: true,
+   },
+  },
  },
  css: {
   devSourcemap: true,

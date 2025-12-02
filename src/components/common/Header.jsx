@@ -113,11 +113,14 @@ const Header = () => {
       </div>
      ) : (
       <>
-       <Link to="/login" className="btn--sm btn--primary">
+       <Link to="/login" className="btn--sm btn--secondary">
         로그인
        </Link>
        <Link to="/signup" className="btn--sm btn--outline">
         회원가입
+       </Link>
+       <Link to="/signup" className="btn--sm btn--outline">
+        비회원 예약 조회
        </Link>
       </>
      )}
