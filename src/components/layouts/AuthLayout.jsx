@@ -1,11 +1,7 @@
 import { Outlet } from "react-router-dom";
 
-const AuthLayout = () => {
-  return (
-    <div className="auth-layout">
-      <Outlet />
-    </div>
-  );
+const AuthLayout = ({ children }) => {
+  return <section className="auth-layout">{children || <Outlet />}</section>;
 };
 
 export default AuthLayout;

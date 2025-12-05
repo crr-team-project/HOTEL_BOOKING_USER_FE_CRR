@@ -1,15 +1,27 @@
 import { Outlet } from "react-router-dom";
+import Header from "../common/Header";
+import Footer from "../common/Footer";
+import MyPageNav from "../mypage/MyPageNav";
+import MyProfile from "../mypage/MyProfile";
 
 const MyPageLayout = () => {
-  return (
-    <div className="mypage-layout">
-      <aside>{/* 사이드바 네비게이션 */}</aside>
+ return (
+  <section className="mypage-layout ">
+   <Header />
 
-      <main>
-        <Outlet />
-      </main>
-    </div>
-  );
+   <div className="hero inner">
+    <MyProfile />
+   </div>
+   <div className="mypage-container inner">
+    <MyPageNav />
+    <main className="mypage-content">
+     <Outlet />
+    </main>
+   </div>
+
+   <Footer />
+  </section>
+ );
 };
 
 export default MyPageLayout;
