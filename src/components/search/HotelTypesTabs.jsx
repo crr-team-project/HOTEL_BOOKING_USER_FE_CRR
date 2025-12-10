@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/components/search/HotelTypesTabs.scss";
 
-const HotelTypesTabs = ({ activeType = "hotel", onTypeChange }) => {
+const HotelTypesTabs = () => {
+ const [activeTab, setActiveTab] = useState("hotels");
+
  const tabs = [
-  { id: "hotel", label: "Hotels", count: 257 },
-  { id: "motel", label: "Motels", count: 51 },
-  { id: "resort", label: "Resorts", count: 72 },
+  { id: "hotels", label: "Hotels", count: 257 },
+  { id: "motels", label: "Motels", count: 51 },
+  { id: "resorts", label: "Resorts", count: 72 },
  ];
 
  return (
@@ -13,8 +15,8 @@ const HotelTypesTabs = ({ activeType = "hotel", onTypeChange }) => {
    {tabs.map((tab) => (
     <button
      key={tab.id}
-     className={`tab-item ${activeType === tab.id ? "active" : ""}`}
-     onClick={() => onTypeChange(tab.id)}
+     className={`tab-item ${activeTab === tab.id ? "active" : ""}`}
+     onClick={() => setActiveTab(tab.id)}
     >
      <span className="tab-label">{tab.label}</span>
      <span className="tab-count">{tab.count} places</span>

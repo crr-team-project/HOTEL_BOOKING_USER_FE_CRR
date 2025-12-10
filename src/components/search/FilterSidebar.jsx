@@ -1,13 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "../../styles/components/search/FilterSidebar.scss";
 
 const FilterSidebar = ({ filters, onFilterChange }) => {
- const [priceRange, setPriceRange] = useState(filters.priceRange || [0, 1000]);
-
- useEffect(() => {
-  setPriceRange(filters.priceRange || [0, 1000]);
- }, [filters.priceRange]);
-
  return (
   <aside className="filter-sidebar">
    <h3 className="filter-title">Filters</h3>
@@ -19,15 +13,11 @@ const FilterSidebar = ({ filters, onFilterChange }) => {
      type="range"
      min="0"
      max="1000"
-     value={priceRange[1]}
-     onChange={(e) => {
-      const newRange = [0, Number(e.target.value)];
-      setPriceRange(newRange);
-      onFilterChange({ priceRange: newRange });
-     }}
+     value={filters.priceRange[1]}
+     onChange={(e) => onFilterChange("priceRange", [0, Number(e.target.value)])}
     />
     <div className="price-display">
-     {priceRange[0]} - ${priceRange[1]}원
+     ${filters.priceRange[0]} - ${filters.priceRange[1]}
     </div>
    </div>
 
@@ -43,7 +33,7 @@ const FilterSidebar = ({ filters, onFilterChange }) => {
         const newRating = e.target.checked
          ? [...filters.rating, rating]
          : filters.rating.filter((r) => r !== rating);
-        onFilterChange({ rating: newRating });
+        onFilterChange("rating", newRating);
        }}
       />
       <span>{rating}+</span>
@@ -64,7 +54,7 @@ const FilterSidebar = ({ filters, onFilterChange }) => {
          const newFreebies = e.target.checked
           ? [...filters.freebies, freebie]
           : filters.freebies.filter((f) => f !== freebie);
-         onFilterChange({ freebies: newFreebies });
+         onFilterChange("freebies", newFreebies);
         }}
        />
        <span>{freebie}</span>
@@ -80,13 +70,12 @@ const FilterSidebar = ({ filters, onFilterChange }) => {
      <label key={amenity} className="filter-checkbox">
       <input
        type="checkbox"
-       value={amenity}
        checked={filters.amenities.includes(amenity)}
        onChange={(e) => {
         const newAmenities = e.target.checked
          ? [...filters.amenities, amenity]
          : filters.amenities.filter((a) => a !== amenity);
-        onFilterChange({ amenities: newAmenities });
+        onFilterChange("amenities", newAmenities);
        }}
       />
       <span>{amenity}</span>

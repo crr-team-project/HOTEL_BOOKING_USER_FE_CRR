@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { FaStar, FaMapMarkerAlt, FaHeart, FaShare } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import "../../styles/components/hotelpage/HotelDetailHeader.scss";
-import { renderStars} from "../../util/reviewHelper";
 
-const HotelDetailHeader = ({ hotel, toggleFavorite, favoriteHotelIds }) => {
+const HotelDetailHeader = ({ hotel }) => {
  // console.log("HotelDetailHeader props:", hotel);
 
  const navigate = useNavigate();
@@ -23,15 +22,24 @@ const HotelDetailHeader = ({ hotel, toggleFavorite, favoriteHotelIds }) => {
   address = "주소 정보 없음",
   location = "",
   basePrice = 0,
-
+  images = [],
  } = hotel;
 
  // 별점을 별 아이콘으로 표시
- renderStars(ratingAverage)
+ const renderStars = (rating) => {
+  const stars = [];
+  const fullStars = Math.floor(rating);
 
- const handleFavorite = async () => {
-  await toggleFavorite(hotel._id || hotel.id);
+  for (let i = 0; i < 5; i++) {
+   stars.push(
+    <FaStar key={i} className={i < fullStars ? "star-filled" : "star-empty"} />
+   );
+  }
+  return stars;
+ };
 
+ const handleFavorite = () => {
+  console.log("Add to favorites");
  };
 
  const handleShare = () => {
@@ -47,7 +55,6 @@ const HotelDetailHeader = ({ hotel, toggleFavorite, favoriteHotelIds }) => {
   navigate(`/booking/${hotel._id || hotel.id}?${params.toString()}`);
  };
 
- const isFavorited = favoriteHotelIds.includes(hotel._id || hotel.id);
  return (
   <div className="hotel-detail-header">
    <div className="header-top">
@@ -57,7 +64,7 @@ const HotelDetailHeader = ({ hotel, toggleFavorite, favoriteHotelIds }) => {
     </div>
     <div className="header-actions">
      <button className="icon-btn" onClick={handleFavorite}>
-   {isFavorited ? "❤️" : "🤍"}
+      <FaHeart />
      </button>
      <button className="icon-btn" onClick={handleShare}>
       <FaShare />
@@ -88,13 +95,35 @@ const HotelDetailHeader = ({ hotel, toggleFavorite, favoriteHotelIds }) => {
       <span className="price">₩{hotel.basePrice.toLocaleString()}</span>
       <span className="price-unit">/night</span>
      </div>
-     <button className="btn btn--secondary" onClick={handleBookNow}>
+     <button className="btn-book-now" onClick={handleBookNow}>
       Book now
      </button>
     </div>
    </div>
 
-
+   <div className="hotel-images">
+    <div className="main-image">
+     <img
+      src={
+       images[0] ||
+       "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800"
+      }
+      alt={name}
+     />
+    </div>
+    <div className="sub-images">
+     {images.slice(1, 5).map((img, index) => (
+      <div key={index} className="sub-image">
+       <img src={img} alt={`${name} ${index + 2}`} />
+       {index === 3 && images.length > 5 && (
+        <div className="view-all-overlay">
+         <span>View all photos</span>
+        </div>
+       )}
+      </div>
+     ))}
+    </div>
+   </div>
   </div>
  );
 };

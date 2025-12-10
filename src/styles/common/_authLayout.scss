@@ -32,10 +32,6 @@
   justify-content: center;
   padding: $spacing-xxxl $spacing-lg;
   background: $color-bg;
-
-  @media (max-width: 768px) {
-   padding: $spacing-xl $spacing-md;
-  }
  }
 
  .auth-layout-image-section {
@@ -65,10 +61,6 @@
  max-width: 42rem;
  padding: 0;
 
- @media (max-width: 768px) {
-  max-width: 100%;
- }
-
  .form-header {
   margin-bottom: $spacing-xxl;
   text-align: left;
@@ -84,17 +76,13 @@
 
    &:hover {
     color: $color-primary;
-  .form-title {
-   font-size: $font-size-section-title;
-   font-weight: $font-weight-bold;
-   color: $color-text;
-   margin-bottom: $spacing-xs;
-   line-height: $line-height-tight;
-
-   @media (max-width: 768px) {
-    font-size: $font-size-3xl;
+    transition: color 0.2s ease;
    }
-  }font-weight: 700;
+  }
+
+  .form-title {
+   font-size: 3.2rem;
+   font-weight: 700;
    color: $color-text;
    margin-bottom: $spacing-xs;
    line-height: $line-height-tight;
@@ -104,16 +92,18 @@
    font-size: $font-size-base;
    color: $color-text-secondary;
    margin: 0;
-  .form-content {
+   line-height: $line-height-base;
+  }
+ }
+
+ .form-content {
   .error-message {
-   background: $color-error-light;
-   color: $color-error;
+   background: #fee2e2;
+   color: #dc2626;
    padding: $spacing-sm;
    border-radius: $border-radius-md;
    font-size: $font-size-sm;
    margin-bottom: $spacing-lg;
-   border: 1px solid $color-error-light;
-  }   margin-bottom: $spacing-lg;
    border: 1px solid #fecaca;
   }
 
@@ -133,13 +123,13 @@
 
    .form-row & {
     margin-bottom: 0;
+   }
+
    .form-label {
     display: block;
-    font-size: $font-size-label;
-    font-weight: $font-weight-medium;
+    font-size: $font-size-sm;
+    font-weight: 500;
     color: $color-text;
-    margin-bottom: $spacing-xs;
-   }color: $color-text;
     margin-bottom: $spacing-xs;
    }
 
@@ -180,13 +170,13 @@
 
     input[type="checkbox"] {
      margin-right: $spacing-xs;
-    input[type="checkbox"] {
-     margin-right: $spacing-xs;
      margin-top: 0.2rem;
-     width: $font-size-base;
-     height: $font-size-base;
+     width: 1.6rem;
+     height: 1.6rem;
      flex-shrink: 0;
-    }checkbox-label {
+    }
+
+    .checkbox-label {
      font-size: $font-size-sm;
      color: $color-text-secondary;
      line-height: $line-height-base;
@@ -212,15 +202,13 @@
 
   .form-button {
    width: 100%;
-  .form-button {
-   width: 100%;
    padding: $spacing-md;
    background: $gradient-gray-medium;
-   color: $color-text-light;
+   color: white;
    border: none;
    border-radius: $border-radius-md;
-   font-size: $font-size-button;
-   font-weight: $font-weight-semibold;
+   font-size: $font-size-base;
+   font-weight: 600;
    cursor: pointer;
    transition: all 0.2s ease;
    margin-bottom: $spacing-xl;
@@ -228,13 +216,11 @@
    &:hover {
     background: $gradient-gray-dark;
     transform: translateY(-1px);
-    box-shadow: $shadow-md;
+    box-shadow: $shadow-sm;
    }
+  }
 
-   @media (max-width: 768px) {
-    padding: $spacing-sm $spacing-md;
-   }
-  }divider {
+  .divider {
    text-align: center;
    margin: $spacing-xl 0;
    position: relative;
@@ -261,11 +247,14 @@
    .social-login-text {
     text-align: center;
     font-size: $font-size-sm;
+    color: $color-text-muted;
+    margin-bottom: $spacing-md;
+   }
+
    .social-buttons {
     display: flex;
     gap: $spacing-sm;
     justify-content: center;
-    flex-wrap: wrap;
 
     .social-button {
      width: 4.8rem;
@@ -281,12 +270,12 @@
 
      &:hover {
       transform: translateY(-1px);
-      box-shadow: $shadow-md;
+      box-shadow: $shadow-sm;
      }
 
      .social-icon {
-      font-size: $font-size-xl;
-      font-weight: $font-weight-semibold;
+      font-size: 2rem;
+      font-weight: 600;
      }
 
      &.facebook .social-icon {
@@ -298,20 +287,7 @@
      }
 
      &.apple .social-icon {
-      color: $color-text;
-     }
-
-     @media (max-width: 768px) {
-      width: 4rem;
-  .security-info {
-   .security-text {
-    font-size: $font-size-caption;
-    color: $color-text-muted;
-    line-height: $line-height-base;
-    text-align: center;
-    margin: 0;
-   }
-  }   color: #000;
+      color: #000;
      }
     }
    }
